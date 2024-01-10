@@ -1,4 +1,4 @@
-package Pluton;
+package Pluton.pieces;
 
 public class Piece {
 }

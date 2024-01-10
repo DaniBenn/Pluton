@@ -1,4 +1,7 @@
-package Pluton;
+package Pluton.engine.Board;
+
+
+import Pluton.engine.piecesBoard.Piece;
 
 public abstract class Tile {
     int tileCoordinate;
@@ -40,6 +43,7 @@ public abstract class Tile {
         public boolean isTileOccupied(){
             return true;
         }
+
         @Override
         public Piece getPiece(){
             return this.pieceOnTile;
