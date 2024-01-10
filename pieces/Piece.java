@@ -4,7 +4,7 @@ import Pluton.Alliance;
 import Pluton.Board.Board;
 import Pluton.Board.Move;
 
-import java.util.List;
+import java.util.Collection;
 
 public abstract class Piece {
 
@@ -16,6 +16,10 @@ public abstract class Piece {
         this.piecePosition = piecePosition;
     }
 
-    public abstract List<Move> calculateLegalMoves(final Board board);
+    public Alliance getPieceAllicance(){
+        return  this.pieceAllicance;
+    }
+
+    public abstract Collection<Move> calculateLegalMoves(final Board board);
 
 }
