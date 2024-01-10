@@ -1,7 +1,7 @@
-package Pluton.engine.Board;
+package Pluton.Board;
 
 
-import Pluton.engine.piecesBoard.Piece;
+import Pluton.pieces.Piece;
 
 public abstract class Tile {
     int tileCoordinate;
