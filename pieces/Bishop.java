@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import static Pluton.Board.Move.*;
+
 public class Bishop extends Piece{
    private final static int[] CANDIDATE_MOVE_VECTOR_COORDINATES = {-9,-7, 7, 9};
 
@@ -18,7 +20,7 @@ public class Bishop extends Piece{
         super(piecePosition, pieceAlliance);
     }
     @Override
-    public Collection<Move> calculateLegalMoves(Board board) {
+    public Collection<Move> calculateLegalMoves(final Board board) {
 
        final List<Move> legalMoves = new ArrayList<>();
 
@@ -37,12 +39,12 @@ public class Bishop extends Piece{
                     final Tile candidateDestinationTile = board.getTile(candidateDestinationCoordinates);
 
                     if (!candidateDestinationTile.isTileOccupied()) {
-                        legalMoves.add(new Move.MajorMove(board, this, candidateDestinationCoordinates));
+                        legalMoves.add(new MajorMove(board, this, candidateDestinationCoordinates));
                     } else {
                         final Piece pieceAtDestination = candidateDestinationTile.getPiece();
                         final Alliance pieceAlliance = pieceAtDestination.getPieceAllicance();
                         if (this.pieceAllicance != pieceAlliance) {
-                            legalMoves.add(new Move.AttackMove(board, this, candidateDestinationCoordinates, pieceAtDestination));
+                            legalMoves.add(new AttackMove(board, this, candidateDestinationCoordinates, pieceAtDestination));
                         }
                         break;
                     }
