@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import static Pluton.Board.Move.*;
+
 public class Knight extends Piece{
 
     private final static int[] CANDIDATE_MOVE_COORDINATES = {-17, -15, -10, -6, 6 ,10, 15, 17};
@@ -20,7 +22,7 @@ public class Knight extends Piece{
     }
 
     @Override
-    public Collection<Move> calculateLegalMoves(Board board) {
+    public Collection<Move> calculateLegalMoves(final Board board) {
 
 
         final List<Move> legalMoves = new ArrayList<>();
@@ -41,13 +43,13 @@ public class Knight extends Piece{
                  final Tile candidateDestinationTile = board.getTile(candidateDestinationCoordinates);
 
                  if(!candidateDestinationTile.isTileOccupied()){
-                     legalMoves.add(new Move());
+                     legalMoves.add(new MajorMove(board, this, candidateDestinationCoordinates));
                  } else {
                      final Piece pieceAtDestination = candidateDestinationTile.getPiece();
                      final Alliance pieceAlliance = pieceAtDestination.getPieceAllicance();
 
                      if(this.pieceAllicance != pieceAlliance) {
-                         legalMoves.add(new Move());
+                         legalMoves.add(new AttackMove(board, this, candidateDestinationCoordinates, pieceAtDestination));
                      }
                  }
              }
