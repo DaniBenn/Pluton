@@ -56,11 +56,11 @@ public class Bishop extends Piece{
         return ImmutableList.copyOf(legalMoves);
     }
 
-    private static boolean isFirstColumnExclusion(final int currentPostion, final int candidateOffset){
-        return BoardUtils.FIRST_COLUMN[currentPostion] &&  (candidateOffset == -9 || candidateOffset == 7);
+    private static boolean isFirstColumnExclusion(final int currentPosition, final int candidateOffset){
+        return BoardUtils.FIRST_COLUMN[currentPosition] &&  (candidateOffset == -9 || candidateOffset == 7);
     }
-    private static boolean isEightColumnExclusion(final int currentPostion, final int candidateOffset){
-        return BoardUtils.EIGHTH_COLUMN[currentPostion] &&  (candidateOffset == -7 || candidateOffset == 9);
+    private static boolean isEightColumnExclusion(final int currentPosition, final int candidateOffset){
+        return BoardUtils.EIGHTH_COLUMN[currentPosition] &&  (candidateOffset == -7 || candidateOffset == 9);
     }
 
 

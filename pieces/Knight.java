@@ -62,8 +62,8 @@ public class Knight extends Piece{
                 || candidateOffset == 6 ||candidateOffset == 15);
     }
 
-    private static boolean isSecondColumnExclusion(final int currentPosition, final int candidateOffest){
-        return BoardUtils.SECOND_COLUMN[currentPosition] && (candidateOffest == -10 || candidateOffest == 6);
+    private static boolean isSecondColumnExclusion(final int currentPosition, final int candidateOffset){
+        return BoardUtils.SECOND_COLUMN[currentPosition] && (candidateOffset == -10 || candidateOffset == 6);
     }
 
     private static boolean isSeventhColumnExclusion(final int currentPosition, final int candidateOffset){
